@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ForecastResponse } from '../../interfaces/forecastResponse.interface';
+import { WeatherForecast } from '../../interfaces/weatherForecast.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +12,10 @@ export class ForecastService {
 
   constructor(private http: HttpClient) { }
 
-  getForecast(query: string): Observable<ForecastResponse> {
+  getForecast(query: string): Observable<WeatherForecast> {
     let headers = new HttpHeaders();
     headers = headers.append('key', this.apiKey);
-    return this.http.get<ForecastResponse>(this.baseUrl, {
+    return this.http.get<WeatherForecast>(this.baseUrl, {
       params: {
         q: query,
         days: 3

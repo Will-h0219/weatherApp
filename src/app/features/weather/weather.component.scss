@@ -13,6 +13,11 @@
     width: 100%;
     @include sm-screen() {
       width: 30%;
+      min-width: 400px;
     }
+  }
+
+  .detail {
+    width: 100%;
   }
 }

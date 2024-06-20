@@ -28,7 +28,8 @@ export class SearchBarComponent implements OnInit {
     ).subscribe({
       next: (value) => {
         if (value) {
-          this.onSearch.emit(value);
+          const treatedValue = value.trim().toLocaleLowerCase();
+          this.onSearch.emit(treatedValue);
         }
       }
     });

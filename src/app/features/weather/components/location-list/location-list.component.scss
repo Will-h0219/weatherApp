@@ -1,0 +1,39 @@
+@import '../../../../../styles/variables';
+
+%item-base {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  // background-color: red;
+}
+
+.locations {
+  display: flex;
+  gap: 18px;
+  &__add-container {
+    @extend %item-base;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-style: dashed;
+    .add {
+      transform: scale(2);
+      margin-bottom: 14px;
+    }
+  }
+  &__saved {
+    @extend %item-base;
+    background-color: $black-04;
+    h2 {
+      margin-bottom: 6px;
+    }
+    span {
+      font-weight: 500;
+    }
+  }
+}

@@ -1,8 +1,13 @@
 <section class="container">
   <div class="general">
+    <button mat-raised-button color="accent" class="full-width">
+      <mat-icon>my_location</mat-icon>
+      Use Current Location
+    </button>
     <app-general-info />
   </div>
   <div class="detail">
     <app-weather-detail />
+    <app-location-list (onLocationSelect)="selectLocation($event)" />
   </div>
 </section>

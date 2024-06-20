@@ -1,0 +1,15 @@
+<section class="locations">
+  <div class="locations__add-container" (click)="openAddDialog()">
+    <p>Click to add the cities you are interested in</p>
+    <mat-icon class="add">add_circle</mat-icon>
+  </div>
+
+  @for (location of userLocations(); track $index) {
+    <div class="locations__saved" (click)="selectLocation(location)">
+      <h2>{{ location.name | titlecase }}</h2>
+      <p>{{ location.country | titlecase }}</p>
+      <span>Timezone:</span>
+      <p>{{ location.tz_id }}</p>
+    </div>
+  }
+</section>
