@@ -1,8 +1,0 @@
-@import '../../../../../styles/medias';
-
-.content-container {
-  padding: 16px;
-  @include sm-screen() {
-    padding: 24px;
-  }
-}
