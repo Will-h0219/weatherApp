@@ -3,7 +3,16 @@
 .container {
   width: 100%;
   height: 100%;
+  padding: 24px;
   @include sm-screen() {
     display: flex;
+    gap: 18px;
+  }
+
+  .general {
+    width: 100%;
+    @include sm-screen() {
+      width: 30%;
+    }
   }
 }
