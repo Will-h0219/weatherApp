@@ -1,0 +1,19 @@
+<div class="card" [ngClass]="{'selected': location.selected}">
+  <div class="card-content">
+    <div class="card-title">
+      <h1>{{location.name}}</h1>
+    </div>
+    <div class="card-region">
+      <p>{{location.region}} / {{location.country}}</p>
+    </div>
+    <div class="timezone">
+      <p>Timezone: {{location.tz_id}}</p>
+    </div>
+  </div>
+
+  <div class="card-actions">
+    <button mat-mini-fab color="warn" (click)="deleteLocation(location.name)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

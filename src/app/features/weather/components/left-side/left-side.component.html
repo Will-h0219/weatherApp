@@ -1,0 +1,35 @@
+<div class="setting-container">
+  <div class="top">
+    <form [formGroup]="locationForm" (submit)="searchCountry()">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Search location"
+          formControlName="location"
+        >
+        <mat-icon matSuffix class="search-icon" (click)="searchCountry()">search</mat-icon>
+      </mat-form-field>
+    </form>
+
+    <div class="saved-locations">
+      @for (location of userLocations(); track $index) {
+        <app-location-card
+          [location]="location"
+          (onDelete)="deleteLocation($event)"
+          (click)="selectLocation(location.name)"
+        />
+      } @empty {
+        <p>No hay nada</p>
+      }
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="separator">Or</div>
+    <button mat-flat-button class="location-btn" (click)="getUserLocation()">
+      <mat-icon>my_location</mat-icon>
+      Use Current Location
+    </button>
+  </div>
+</div>
