@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { WeatherForecast } from '../../interfaces/weatherForecast.interface';
 
 @Injectable({
@@ -9,8 +9,8 @@ import { WeatherForecast } from '../../interfaces/weatherForecast.interface';
 export class ForecastService {
   private apiKey = 'API_KEY_HERE';
   private baseUrl = 'http://api.weatherapi.com/v1/forecast.json';
-
-  constructor(private http: HttpClient) { }
+  private http = inject(HttpClient);
+  weatherForecast$: Subject<WeatherForecast> = new Subject();
 
   getForecast(query: string): Observable<WeatherForecast> {
     let headers = new HttpHeaders();

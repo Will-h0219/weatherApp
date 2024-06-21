@@ -26,8 +26,6 @@ import { MatIconModule } from '@angular/material/icon';
 export class WeatherComponent {
   private forecastService = inject(ForecastService);
 
-  currentForecast!: WeatherForecast;
-
   search(value: string) {
     this.forecastService.getForecast(value).subscribe({
       next: (data) => console.log(data)
@@ -38,8 +36,8 @@ export class WeatherComponent {
     const nameLowercase = location.name.toLowerCase();
     this.forecastService.getForecast(nameLowercase).subscribe({
       next: (data) => {
-        this.currentForecast = data;
-        console.log(this.currentForecast)
+        console.log(data);
+        this.forecastService.weatherForecast$.next(data);
       }
     });
   }

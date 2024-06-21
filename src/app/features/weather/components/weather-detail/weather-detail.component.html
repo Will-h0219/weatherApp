@@ -1,29 +1,48 @@
 <div class="weather">
-  <app-detail-banner />
+  <app-detail-banner [data]="bannerInfo()" />
+
   <div class="weather__details">
     @if (true) {
       <div class="weather__details-grid">
         <div class="weather__details-grid__item feels-like">
-          <app-weather-detail-item type="feelsLike" [value]="10" />
+          <app-weather-detail-item
+            type="feelsLike"
+            [value]="currentForecast()?.current?.feelslike_c"
+          />
         </div>
         <div class="weather__details-grid__item pressure">
-          <app-weather-detail-item type="pressure" [value]="10" />
+          <app-weather-detail-item
+            type="pressure"
+            [value]="currentForecast()?.current?.pressure_mb"
+          />
         </div>
         <div class="weather__details-grid__item uv">
-          <app-weather-detail-item type="uv" [value]="10" />
+          <app-weather-detail-item
+            type="uv"
+            [value]="currentForecast()?.current?.uv"
+          />
         </div>
         <div class="weather__details-grid__item precipitation">
-          <app-weather-detail-item type="precipitation" [value]="10" />
+          <app-weather-detail-item
+            type="precipitation"
+            [value]="currentForecast()?.current?.precip_mm"
+          />
         </div>
         <div class="weather__details-grid__item wind-speed">
-          <app-weather-detail-item type="windSpeed" [value]="10" />
+          <app-weather-detail-item
+            type="windSpeed"
+            [value]="currentForecast()?.current?.wind_kph"
+          />
         </div>
         <div class="weather__details-grid__item humidity">
-          <app-weather-detail-item type="humidity" [value]="10" />
+          <app-weather-detail-item
+            type="humidity"
+            [value]="currentForecast()?.current?.humidity"
+          />
         </div>
       </div>
       <div class="weather__details__last-update">
-        <small>Last update: today</small>
+        <small>Last update: {{ currentForecast()?.current?.last_updated }}</small>
       </div>
     } @else {
 

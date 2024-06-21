@@ -1,15 +1,15 @@
 <div class="styled-div">
   <div class="name">
-    <h1>{{ locationName }}</h1>
+    <h1>{{ data?.locationName || '&ndash;&ndash;' }}</h1>
   </div>
   <div class="temperatures">
     <div class="main">
-      <p class="avg-temp"><strong>{{ averageTemperature }}°</strong></p>
-      <p class="description">{{ conditionDesc }}</p>
+      <p class="avg-temp"><strong>{{ (data?.temperature| degree) || '&mdash;&mdash;' }}</strong></p>
+      <p class="description">{{ data?.conditionText || '&ndash;&ndash;' }}</p>
     </div>
     <div class="min-max">
-      <p>Max: {{ maximumTemperature }}°</p>
-      <p>Min: {{ minimumTemperature }}°</p>
+      <p>Max: {{ (data?.maxTemperature | degree) || '&mdash;&mdash;' }}</p>
+      <p>Min: {{ (data?.minTemperature | degree) || '&mdash;&mdash;' }}</p>
     </div>
   </div>
 </div>
