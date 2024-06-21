@@ -18,27 +18,24 @@
   &__details {
     width: calc(40% - 16px);
     height: 100%;
-    padding: 4rem 1rem;
-    &-grid {
-      width: 100%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 32px 16px;
-      grid-template-areas:
-        "feels-like pressure uv"
-        "precipitation wind-speed humidity";
-    }
+    padding: 1rem;
     &__last-update {
       text-align: center;
       opacity: .6;
     }
-    .feels-like { grid-area: feels-like; }
-    .pressure { grid-area: pressure; }
-    .uv { grid-area: uv; }
-    .precipitation { grid-area: precipitation; }
-    .wind-speed { grid-area: wind-speed; }
-    .humidity { grid-area: humidity; }
+
+    .no-data {
+      text-align: center;
+      font-size: 1.25rem;
+      line-height: normal;
+      img {
+        width: 100%;
+        max-width: 230px;
+      }
+      p {
+        margin-block: 1.5rem;
+        opacity: .8;
+      }
+    }
   }
 }

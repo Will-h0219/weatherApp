@@ -1,0 +1,19 @@
+.details-grid {
+  padding-block: 3rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 32px 16px;
+  grid-template-areas:
+    "feels-like pressure uv"
+    "precipitation wind-speed humidity";
+}
+
+.feels-like { grid-area: feels-like; }
+.pressure { grid-area: pressure; }
+.uv { grid-area: uv; }
+.precipitation { grid-area: precipitation; }
+.wind-speed { grid-area: wind-speed; }
+.humidity { grid-area: humidity; }

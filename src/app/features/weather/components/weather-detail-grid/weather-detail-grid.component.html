@@ -1,0 +1,38 @@
+<div class="details-grid">
+  <div class="details-grid__item feels-like">
+    <app-weather-detail-item
+      type="feelsLike"
+      [value]="currentWeather.feelslike_c"
+    />
+  </div>
+  <div class="details-grid__item pressure">
+    <app-weather-detail-item
+      type="pressure"
+      [value]="currentWeather.pressure_mb"
+    />
+  </div>
+  <div class="details-grid__item uv">
+    <app-weather-detail-item
+      type="uv"
+      [value]="currentWeather.uv"
+    />
+  </div>
+  <div class="details-grid__item precipitation">
+    <app-weather-detail-item
+      type="precipitation"
+      [value]="currentWeather.precip_mm"
+    />
+  </div>
+  <div class="details-grid__item wind-speed">
+    <app-weather-detail-item
+      type="windSpeed"
+      [value]="currentWeather.wind_kph"
+    />
+  </div>
+  <div class="details-grid__item humidity">
+    <app-weather-detail-item
+      type="humidity"
+      [value]="currentWeather.humidity"
+    />
+  </div>
+</div>

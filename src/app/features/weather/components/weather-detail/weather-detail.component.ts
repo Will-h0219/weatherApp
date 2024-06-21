@@ -1,15 +1,15 @@
 import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { DetailBannerComponent } from '../detail-banner/detail-banner.component';
-import { WeatherDetailItemComponent } from '../weather-detail-item/weather-detail-item.component';
 import { WeatherForecast } from '../../../../data/interfaces/weatherForecast.interface';
 import { ForecastService } from '../../../../data/services/forecast/forecast.service';
+import { WeatherDetailGridComponent } from '../weather-detail-grid/weather-detail-grid.component';
 
 @Component({
   selector: 'app-weather-detail',
   standalone: true,
   imports: [
     DetailBannerComponent,
-    WeatherDetailItemComponent
+    WeatherDetailGridComponent
   ],
   templateUrl: './weather-detail.component.html',
   styleUrl: './weather-detail.component.scss'
@@ -29,10 +29,14 @@ export class WeatherDetailComponent implements OnInit {
     }
     return {};
   });
+  showDay = signal<boolean>(true);
 
   ngOnInit(): void {
     this.forecastService.weatherForecast$.subscribe({
       next: (data) => this.currentForecast.update(() => ({...data}))
+    });
+    this.showDay.update(() => {
+      return new Date().getHours() > 5 && new Date().getHours() < 19;
     });
   }
 }
