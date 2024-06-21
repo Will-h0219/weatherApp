@@ -12,8 +12,8 @@
   .general {
     width: 100%;
     @include sm-screen() {
-      width: 30%;
-      min-width: 400px;
+      width: 35%;
+      // min-width: 400px;
     }
   }
 
