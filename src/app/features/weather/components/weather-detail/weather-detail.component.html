@@ -9,7 +9,7 @@
       </div>
     } @else {
       <div class="no-data">
-        <img src="../../../../../assets/Day Clouds.svg">
+        <img [src]="showDay() ? '../../../../../assets/Day Clouds.svg' : '../../../../../assets/Night Clouds.svg'">
         <p>Select a location you are interested in.</p>
       </div>
     }
