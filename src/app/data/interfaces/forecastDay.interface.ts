@@ -2,11 +2,14 @@ import { Condition } from "./condition.interface";
 import { CurrentWeather } from "./currentWeather.interface";
 
 export interface Forecastday {
-  date:       Date;
-  date_epoch: number;
-  day:        Day;
-  astro:      Astro;
-  hour:       CurrentWeather[];
+  date:         string;
+  date_epoch:   number;
+  day:          Day;
+  astro:        Astro;
+  hour:         CurrentWeather[];
+  weekday?:      string;
+  dayFormatted?: string;
+  selected?:    boolean;
 }
 
 export interface Astro {

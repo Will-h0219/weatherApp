@@ -10,6 +10,7 @@
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
+  display: flex;
 
   @include sm-screen() {
     height: calc(100% - 200px);
@@ -37,5 +38,11 @@
         opacity: .8;
       }
     }
+  }
+
+  &__forecastday {
+    width: 60%;
+    height: 50%;
+    align-self: self-end;
   }
 }

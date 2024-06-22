@@ -1,0 +1,25 @@
+.forecastday {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+  &__days {
+    display: flex;
+    .image {
+      flex: 0 0 30%;
+      position: relative;
+      img {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        transform: scale(1.5) translateY(-15px);
+      }
+    }
+    .days {
+      flex: 0 0 70%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+  }
+}

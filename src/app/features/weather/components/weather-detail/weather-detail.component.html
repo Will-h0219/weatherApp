@@ -14,4 +14,12 @@
       </div>
     }
   </div>
+
+  <div class="weather__forecastday">
+    <app-forecastday
+      [currentCondition]="currentForecast()?.current?.condition"
+      [forecast]="currentForecast()?.forecast?.forecastday || []"
+      [isDay]="!!currentForecast()?.current?.is_day"
+    />
+  </div>
 </div>

@@ -3,12 +3,14 @@ import { DetailBannerComponent } from '../detail-banner/detail-banner.component'
 import { WeatherForecast } from '../../../../data/interfaces/weatherForecast.interface';
 import { ForecastService } from '../../../../data/services/forecast/forecast.service';
 import { WeatherDetailGridComponent } from '../weather-detail-grid/weather-detail-grid.component';
+import { ForecastdayComponent } from '../forecastday/forecastday.component';
 
 @Component({
   selector: 'app-weather-detail',
   standalone: true,
   imports: [
     DetailBannerComponent,
+    ForecastdayComponent,
     WeatherDetailGridComponent
   ],
   templateUrl: './weather-detail.component.html',

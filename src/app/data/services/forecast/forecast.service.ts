@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, map } from 'rxjs';
 import { WeatherForecast } from '../../interfaces/weatherForecast.interface';
+import { DateTime } from "luxon";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,15 @@ export class ForecastService {
         days: 3
       },
       headers
-    });
+    }).pipe(
+      map((data) => {
+        data.forecast.forecastday.forEach((day) => {
+          const weekday = DateTime.fromISO(day.date);
+          day.weekday = weekday.toFormat('EEEE');
+          day.dayFormatted = weekday.toFormat('LLL dd');
+        });
+        return { ...data };
+      })
+    );
   }
 }
