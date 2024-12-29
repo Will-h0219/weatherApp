@@ -1,4 +1,4 @@
-<div class="rounded-input">
+<div class="rounded-input" [ngClass]="themeService.themeSignal()">
   <mat-form-field subscriptSizing="dynamic" appearance="outline" class="full-width">
     <input [formControl]="search" matInput placeholder="Search">
     <mat-icon class="search-icon" matPrefix>search</mat-icon>
