@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailBannerComponent } from './detail-banner.component';
+import { ThemeToggleComponent } from './theme-toggle.component';
 
-describe('DetailBannerComponent', () => {
-  let component: DetailBannerComponent;
-  let fixture: ComponentFixture<DetailBannerComponent>;
+describe('ThemeToggleComponent', () => {
+  let component: ThemeToggleComponent;
+  let fixture: ComponentFixture<ThemeToggleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DetailBannerComponent]
+      imports: [ThemeToggleComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DetailBannerComponent);
+    fixture = TestBed.createComponent(ThemeToggleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

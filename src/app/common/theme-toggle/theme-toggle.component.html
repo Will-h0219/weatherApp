@@ -1,0 +1,6 @@
+<div>
+  <mat-slide-toggle
+    [checked]="themeService.themeSignal() === 'dark'"
+    (change)="toggleTheme($event)"
+  />
+</div>
