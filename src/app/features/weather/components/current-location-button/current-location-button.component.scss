@@ -1,0 +1,9 @@
+@import '../../../../../styles/variables';
+
+.location {
+  background-color: rgb(76, 187, 23);
+  font-weight: 900;
+  p {
+    color: $light-01;
+  }
+}
