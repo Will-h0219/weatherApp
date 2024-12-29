@@ -3,11 +3,10 @@ import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/sl
 import { ThemeService } from '../../services/theme/theme.service';
 
 @Component({
-  selector: 'app-theme-toggle',
-  standalone: true,
-  imports: [MatSlideToggleModule],
-  templateUrl: './theme-toggle.component.html',
-  styleUrl: './theme-toggle.component.scss'
+    selector: 'app-theme-toggle',
+    imports: [MatSlideToggleModule],
+    templateUrl: './theme-toggle.component.html',
+    styleUrl: './theme-toggle.component.scss'
 })
 export class ThemeToggleComponent implements OnInit {
   themeService: ThemeService = inject(ThemeService);

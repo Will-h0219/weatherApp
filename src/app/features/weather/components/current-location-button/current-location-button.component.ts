@@ -3,14 +3,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-current-location-button',
-  standalone: true,
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-  ],
-  templateUrl: './current-location-button.component.html',
-  styleUrl: './current-location-button.component.scss'
+    selector: 'app-current-location-button',
+    imports: [
+        MatButtonModule,
+        MatIconModule,
+    ],
+    templateUrl: './current-location-button.component.html',
+    styleUrl: './current-location-button.component.scss'
 })
 export class CurrentLocationButtonComponent {
   getCurrentLocation() {
