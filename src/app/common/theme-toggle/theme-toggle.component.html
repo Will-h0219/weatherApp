@@ -1,6 +1,7 @@
-<div>
+<div class="theme-toggle">
   <mat-slide-toggle
     [checked]="themeService.themeSignal() === 'dark'"
     (change)="toggleTheme($event)"
-  />
+  ></mat-slide-toggle>
+  <p>{{ themeService.themeSignal() === 'dark' ? 'Dark' : 'Light' }} theme</p>
 </div>

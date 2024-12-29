@@ -2,14 +2,14 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ForecastService } from '../../data/services/forecast/forecast.service';
 import { ThemeService } from '../../services/theme/theme.service';
-import { ThemeToggleComponent } from '../../common/theme-toggle/theme-toggle.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-weather',
   standalone: true,
   imports: [
     CommonModule,
-    ThemeToggleComponent
+    HeaderComponent,
   ],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.scss'

@@ -10,8 +10,15 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: $black-03;
-  color: $light-01;
+
+  .dark {
+    background: rgb(68, 68, 68);
+    color: $light-01;
+  }
+  .light {
+    background: rgb(217, 217, 217);
+    color: $black-03;
+  }
 }
 
 p,
@@ -22,12 +29,37 @@ h4,
 h5,
 h6 {
   margin: 0;
-  color: $light-01;
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Poppins, "Helvetica Neue", sans-serif !important;
+}
 
 .full-width {
   width: 100%;
+}
+
+.dark {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $light-01;
+  }
+}
+.light {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $black-03;
+  }
 }
