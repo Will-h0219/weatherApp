@@ -1,1 +1,11 @@
-<p>card works!</p>
+<div class="custom">
+  <mat-card
+    appearance="outlined"
+    class="custom__card"
+    [ngClass]="themeService.themeSignal()"
+  >
+    <mat-card-content>
+      <ng-content />
+    </mat-card-content>
+  </mat-card>
+</div>

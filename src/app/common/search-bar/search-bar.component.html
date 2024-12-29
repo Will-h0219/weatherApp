@@ -1,6 +1,6 @@
 <div class="rounded-input" [ngClass]="themeService.themeSignal()">
   <mat-form-field subscriptSizing="dynamic" appearance="outline" class="full-width">
-    <input [formControl]="search" matInput placeholder="Search">
+    <input [formControl]="search" matInput placeholder="Search for your preffered city...">
     <mat-icon class="search-icon" matPrefix>search</mat-icon>
     @if (search.value) {
       <mat-icon matSuffix class="clear" (click)="clearSearch()">close</mat-icon>

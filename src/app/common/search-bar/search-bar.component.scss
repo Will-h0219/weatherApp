@@ -1,3 +1,6 @@
+@use '@angular/material' as mat;
+@use '../../../styles/variables' as *;
+
 .full-width {
   .search-icon {
     color: rgb(183, 183, 183);
@@ -5,4 +8,26 @@
   .clear {
     cursor: pointer;
   }
+}
+
+.rounded-input {
+  @include mat.form-field-overrides((
+    container-height: auto,
+    container-vertical-padding: 12px,
+    outlined-container-shape: 28px,
+    ));
+    &.light {
+      @include mat.form-field-overrides((
+        outlined-outline-color: $black-03,
+        outlined-hover-outline-color: $black-05,
+        outlined-input-text-placeholder-color: $black-05,
+        outlined-focus-outline-color: $black-03,
+        outlined-input-text-color: $black-01
+    ));
+
+  }
+}
+
+.rounded-input.dark, .rounded-input.light {
+  background-color: transparent;
 }
