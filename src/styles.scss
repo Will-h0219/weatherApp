@@ -1,6 +1,6 @@
-@import './styles/variables';
-@import './styles/medias';
-@import './styles/components';
+@use './styles/variables' as *;
+@use './styles/medias';
+@use './styles/components';
 
 * {
   box-sizing: border-box;
