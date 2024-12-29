@@ -1,7 +1,9 @@
-<mat-form-field appearance="outline" class="full-width">
-  <input [formControl]="search" matInput placeholder="Search">
-  <mat-icon matPrefix>search</mat-icon>
-  @if (search.value) {
-    <mat-icon matSuffix class="clear" (click)="clearSearch()">close</mat-icon>
-  }
-</mat-form-field>
+<div class="rounded-input">
+  <mat-form-field subscriptSizing="dynamic" appearance="outline" class="full-width">
+    <input [formControl]="search" matInput placeholder="Search">
+    <mat-icon class="search-icon" matPrefix>search</mat-icon>
+    @if (search.value) {
+      <mat-icon matSuffix class="clear" (click)="clearSearch()">close</mat-icon>
+    }
+  </mat-form-field>
+</div>
