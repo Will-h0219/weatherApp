@@ -9,6 +9,8 @@ import { CODES_DICTIONARY } from '../../../../data/constants/conditions-codes.co
 import { AVAILABLE_WIDGETS } from './weather-info.constants';
 import { WidgetItem } from '../../../../data/interfaces/widget-item.interface';
 
+type WeatherWithoutCondition = Omit<CurrentWeather, 'condition'>;
+
 @Component({
   selector: 'app-weather-info',
   imports: [
@@ -45,9 +47,10 @@ export class WeatherInfoComponent {
   widgets: Signal<WidgetItem[]> = computed(() => {
     return Object.keys(AVAILABLE_WIDGETS).map(key => {
       const { id, icon, label } = AVAILABLE_WIDGETS[key];
+      const dataValue = (this.currentWeather() as WeatherWithoutCondition)?.[key as keyof WeatherWithoutCondition];
       const value = AVAILABLE_WIDGETS[key].sufix
-        ? `${AVAILABLE_WIDGETS[key].value}${AVAILABLE_WIDGETS[key].sufix}`
-        : AVAILABLE_WIDGETS[key].value;
+        ? `${dataValue || 0}${AVAILABLE_WIDGETS[key].sufix}`
+        : dataValue || 0;
       return { id, icon, label, value }
     });
   });
