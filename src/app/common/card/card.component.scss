@@ -1,14 +1,20 @@
 @use '@angular/material' as mat;
 
 .custom {
+  height: 100%;
   @include mat.card-overrides((
     outlined-outline-color: transparent,
     outlined-container-shape: 30px,
   ));
 
   &__card {
+    height: 100%;
     -webkit-box-shadow: 10px 10px 4px -4px rgba(0,0,0,0.5);
     -moz-box-shadow: 10px 10px 4px -4px rgba(0,0,0,0.5);
     box-shadow: 10px 10px 4px -4px rgba(0,0,0,0.5);
+
+    .card-content {
+      height: 100%;
+    }
   }
 }

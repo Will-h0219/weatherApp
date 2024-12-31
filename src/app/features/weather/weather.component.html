@@ -1,3 +1,11 @@
 <section class="container" [ngClass]="themeService.themeSignal()">
   <app-header />
+  <div class="row">
+    <app-current-city class="current-city" [locationData]="data()?.location" />
+    <app-weather-info class="weather-info" [currentWeather]="data()?.current" />
+  </div>
+  <div class="row">
+    <app-next-days-forecast class="next-days-forecast" />
+    <app-hourly-forecast class="hourly-forecast" />
+  </div>
 </section>

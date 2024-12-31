@@ -1,4 +1,4 @@
-export const CODES_DICTIONARY = {
+export const CODES_DICTIONARY: Record<string, any> = {
   "1000": {
     code: 1000,
     day: "Sunny",

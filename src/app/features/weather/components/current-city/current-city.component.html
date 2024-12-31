@@ -1,0 +1,17 @@
+<app-card>
+  <!-- @if (!locationData) {
+    <p>No hay data</p>
+  } @else {
+    {{ locationData | json }}
+  } -->
+  <div class="column content">
+    <div class="column place">
+      <p class="city">Soacha</p>
+      <p class="country">Colombia</p>
+    </div>
+    <div class="column datetime">
+      <p class="time">{{ "2024-12-29 18:02" | date: 'HH:mm' }}</p>
+      <p class="date">{{ "2024-12-29 18:02" | date: 'EEEE, dd LLL' }}</p>
+    </div>
+  </div>
+</app-card>

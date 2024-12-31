@@ -1,0 +1,20 @@
+.widget {
+  height: 100%;
+  justify-content: space-evenly;
+  padding: 4px 8px;
+  text-align: center;
+
+  .icon {
+    width: 60px;
+    height: 60px;
+    font-size: 60px;
+  }
+  .value {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

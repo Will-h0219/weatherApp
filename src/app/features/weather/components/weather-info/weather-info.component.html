@@ -1,0 +1,33 @@
+<app-card>
+  <div class="content" [ngClass]="themeService.themeSignal()">
+    <div class="column temperature">
+      <div class="column degrees">
+        <p class="degrees__main">{{ '11.6' | degree }}C</p>
+        <p class="feel">Feels like:&nbsp;<span class="degrees__secondary">{{ '11.6' | degree }}C</span></p>
+      </div>
+      <div class="sunrise">
+        <div class="description">
+          <p>Sunrise</p>
+          <p>08:37am</p>
+        </div>
+      </div>
+      <div class="sunset">
+        <div class="description">
+          <p>Sunset</p>
+          <p>20:37pm</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column weather-state">
+      <img width="270px" [src]="imageData().path" [alt]="imageData().altText">
+      <p class="weather-state__state">{{ imageData().label }}</p>
+    </div>
+
+    <div class="widgets">
+      @for (widget of widgets(); track widget.id) {
+        <app-widget-item [widgetData]="widget" />
+      }
+    </div>
+  </div>
+</app-card>

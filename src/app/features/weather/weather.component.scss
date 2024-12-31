@@ -1,13 +1,34 @@
-@use '../../../styles/medias';
+@use '../../../styles/medias' as *;
 
 .container {
   width: 100%;
   height: 100%;
   padding: 24px;
-  // @include sm-screen() {
-  //   display: flex;
-  //   gap: 18px;
-  // }
+  @include sm-screen() {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .row {
+    display: flex;
+    gap: 55px;
+    height: 50%;
+    align-items: stretch;
+
+    .current-city {
+      flex: 40%;
+    }
+    .weather-info {
+      flex: 60%;
+    }
+    .next-days-forecast {
+      flex: 35%;
+    }
+    .hourly-forecast {
+      flex: 65%;
+    }
+  }
 }
 
 .light {

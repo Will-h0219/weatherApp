@@ -1,0 +1,114 @@
+@use '../../../../../styles/variables' as *;
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .temperature {
+    justify-content: center;
+    flex: 30%;
+    .degrees {
+      margin-bottom: 30px;
+      &__main {
+        font-size: 80px;
+        line-height: 125%;
+        font-weight: 600;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      &__secondary {
+        font-size: 32px;
+      }
+      .feel {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+
+    .sunrise {
+      margin-bottom: 12px;
+    }
+
+    .sunrise, .sunset {
+      position: relative;
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+      }
+  
+      .description {
+        p:first-child {
+          font-size: 20px;
+          font-weight: 600;
+        }
+        p:last-child {
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+    
+    .sunrise::before {
+      mask: url('../../../../../assets/icons/sunrise.svg') no-repeat 50% 50%;
+      -webkit-mask: url('../../../../../assets/icons/sunrise.svg') no-repeat 50% 50%;
+    }
+    .sunset::before {
+      mask: url('../../../../../assets/icons/sunset.svg') no-repeat 50% 50%;
+      -webkit-mask: url('../../../../../assets/icons/sunset.svg') no-repeat 50% 50%;
+    }
+  }
+
+  .weather-state {
+    justify-content: space-evenly;
+    flex: 40%;
+    
+    &__state {
+      font-size: 32px;
+      font-weight: 600;
+    }
+  }
+
+  .widgets {
+    flex: 30%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.dark {
+    .degrees {
+      &__main {
+        background: $black-03;
+        background: linear-gradient(58deg, $light-01 0%, $light-transparent 100%);
+      }
+      .feel {
+        color: $light-02;
+      }
+    }
+    .sunrise::before, .sunset::before {
+      background-color: $light-01;
+    }
+  }
+  &.light {
+    .degrees {
+      &__main {
+        background: $black-03;
+        background: linear-gradient(58deg, $black-03 0%, $light-transparent 100%);
+      }
+      .feel {
+        color: $black-03;
+      }
+    }
+    .sunrise::before, .sunset::before {
+      background-color: $black-03;
+    }
+  }
+}
