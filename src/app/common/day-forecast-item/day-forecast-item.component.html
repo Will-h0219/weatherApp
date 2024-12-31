@@ -1,0 +1,5 @@
+<div class="row">
+  <img width="60px" [src]="forecastday()?.day?.condition?.icon" [alt]="altText()">
+  <p class="temp">{{ forecastday()?.day?.avgtemp_c | number: '1.1-1' | degree }}</p>
+  <p class="date">{{ forecastday()?.date | date: 'EEEE, dd LLL' }}</p>
+</div>
