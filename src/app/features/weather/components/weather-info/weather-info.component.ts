@@ -9,7 +9,7 @@ import { CODES_DICTIONARY } from '../../../../data/constants/conditions-codes.co
 import { AVAILABLE_WIDGETS } from './weather-info.constants';
 import { WidgetItem } from '../../../../data/interfaces/widget-item.interface';
 
-type WeatherWithoutCondition = Omit<CurrentWeather, 'condition'>;
+type WeatherWithoutCondition = Omit<CurrentWeather, 'condition' | 'astro'>;
 
 @Component({
   selector: 'app-weather-info',
@@ -25,6 +25,16 @@ type WeatherWithoutCondition = Omit<CurrentWeather, 'condition'>;
 export class WeatherInfoComponent {
   themeService: ThemeService = inject(ThemeService);
   currentWeather: InputSignal<CurrentWeather | undefined> = input();
+
+  temperature = computed(() => {
+    return {
+      temp: this.currentWeather()?.temp_c,
+      feelsLike: this.currentWeather()?.feelslike_c,
+      sunrise: this.currentWeather()?.astro?.sunrise,
+      sunset: this.currentWeather()?.astro?.sunset,
+    };
+  });
+
   imageData = computed(() => {
     let path, label, altText;
     if (!this.currentWeather()) {
@@ -44,6 +54,7 @@ export class WeatherInfoComponent {
     altText = conditionObject[dayNightImage];
     return { path, altText, label };
   });
+
   widgets: Signal<WidgetItem[]> = computed(() => {
     return Object.keys(AVAILABLE_WIDGETS).map(key => {
       const { id, icon, label } = AVAILABLE_WIDGETS[key];

@@ -39,6 +39,10 @@ export class ForecastService {
       map((data) => {
         const transformedData = {
           ...data,
+          current: {
+            ...data.current,
+            astro: { ...data.forecast.forecastday[0].astro },
+          },
           forecast: {
             ...data.forecast,
             forecastday: data.forecast.forecastday.map((day) => {

@@ -2,19 +2,19 @@
   <div class="content" [ngClass]="themeService.themeSignal()">
     <div class="column temperature">
       <div class="column degrees">
-        <p class="degrees__main">{{ '11.6' | degree }}C</p>
-        <p class="feel">Feels like:&nbsp;<span class="degrees__secondary">{{ '11.6' | degree }}C</span></p>
+        <p class="degrees__main">{{ temperature().temp || '0' | degree }}C</p>
+        <p class="feel">Feels like:&nbsp;<span class="degrees__secondary">{{ temperature().feelsLike || '0' | degree }}C</span></p>
       </div>
       <div class="sunrise">
         <div class="description">
           <p>Sunrise</p>
-          <p>08:37am</p>
+          <p>{{ temperature().sunrise || '' }}</p>
         </div>
       </div>
       <div class="sunset">
         <div class="description">
           <p>Sunset</p>
-          <p>20:37pm</p>
+          <p>{{ temperature().sunset || '' }}</p>
         </div>
       </div>
     </div>

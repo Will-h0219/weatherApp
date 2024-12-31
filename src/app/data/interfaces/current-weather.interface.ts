@@ -1,4 +1,5 @@
 import { Condition } from "./condition.interface";
+import { Astro } from "./forecast-day.interface";
 
 export interface CurrentWeather {
   last_updated_epoch?: number;
@@ -37,4 +38,5 @@ export interface CurrentWeather {
   chance_of_rain?:     number;
   will_it_snow?:       number;
   chance_of_snow?:     number;
+  astro?:              Astro;
 }
