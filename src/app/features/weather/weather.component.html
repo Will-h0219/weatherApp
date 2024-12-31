@@ -1,8 +1,8 @@
 <section class="container" [ngClass]="themeService.themeSignal()">
   <app-header />
   <div class="row">
-    <app-current-city class="current-city" [location]="data()?.location" />
     <app-weather-info class="weather-info" [currentWeather]="data()?.current" />
+    <app-current-city class="current-city" [location]="data()?.location" />
   </div>
   <div class="row">
     <app-next-days-forecast class="next-days-forecast" [daysForecast]="data()?.forecast?.forecastday || []" />

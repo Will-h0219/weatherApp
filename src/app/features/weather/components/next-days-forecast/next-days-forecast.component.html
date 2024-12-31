@@ -1,10 +1,12 @@
 <app-card>
   <div class="column content">
     <p class="title">3 Days Forecast:</p>
-    @for (day of daysForecast(); track day.date_epoch) {
-      <app-day-forecast-item [forecastday]="day" />
-    } @empty {
-      <p>No hay nada</p>
-    }
+    <div class="column days">
+      @for (day of daysForecast(); track day.date_epoch) {
+        <app-day-forecast-item [forecastday]="day" />
+      } @empty {
+        <p>No hay nada</p>
+      }
+    </div>
   </div>
 </app-card>
