@@ -24,14 +24,22 @@ export class WeatherInfoComponent {
   themeService: ThemeService = inject(ThemeService);
   currentWeather: InputSignal<CurrentWeather | undefined> = input();
   imageData = computed(() => {
+    let path, label, altText;
+    if (!this.currentWeather()) {
+      return {
+        path: 'assets/images/day/sunnyday.svg',
+        label: 'Sunny',
+        altText: 'sunnyday',
+      };
+    }
     const isDay = this.currentWeather()?.is_day;
     const code = this.currentWeather()?.condition.code || 1000;
     const conditionObject = CODES_DICTIONARY[`${code}`];
     const dayNight = isDay ? 'day' : 'night';
     const dayNightImage = isDay ? 'dayImage' : 'nightImage';
-    const path = `assets/images/${dayNight}/${conditionObject[dayNightImage]}.svg`;
-    const label = conditionObject[dayNight];
-    const altText = conditionObject[dayNightImage];
+    path = `assets/images/${dayNight}/${conditionObject[dayNightImage]}.svg`;
+    label = conditionObject[dayNight];
+    altText = conditionObject[dayNightImage];
     return { path, altText, label };
   });
   widgets: Signal<WidgetItem[]> = computed(() => {
