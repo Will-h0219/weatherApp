@@ -1,5 +1,5 @@
 import { Condition } from "./condition.interface";
-import { CurrentWeather } from "./currentWeather.interface";
+import { CurrentWeather } from "./current-weather.interface";
 
 export interface Forecastday {
   date:         string;
