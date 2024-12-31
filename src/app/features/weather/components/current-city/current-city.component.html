@@ -6,12 +6,12 @@
   } -->
   <div class="column content">
     <div class="column place">
-      <p class="city">Soacha</p>
-      <p class="country">Colombia</p>
+      <p class="city">{{ location()?.name }}</p>
+      <p class="country">{{ location()?.country }}</p>
     </div>
     <div class="column datetime">
-      <p class="time">{{ "2024-12-29 18:02" | date: 'HH:mm' }}</p>
-      <p class="date">{{ "2024-12-29 18:02" | date: 'EEEE, dd LLL' }}</p>
+      <p class="time">{{ location()?.localtime | date: 'HH:mm' }}</p>
+      <p class="date">{{ location()?.localtime | date: 'EEEE, dd LLL' }}</p>
     </div>
   </div>
 </app-card>
