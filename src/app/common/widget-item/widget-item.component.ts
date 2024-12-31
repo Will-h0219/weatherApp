@@ -12,5 +12,4 @@ import { WidgetItem } from '../../data/interfaces/widget-item.interface';
 })
 export class WidgetItemComponent {
   widgetData = input.required<WidgetItem>();
-  defaultImage = 'assets/images/day/sunnyday.svg';
 }
