@@ -13,7 +13,7 @@ interface WeatherForecastSignal {
   providedIn: 'root'
 })
 export class ForecastService {
-  private apiKey = '40241206aef94e468b3165722241406';
+  private apiKey = 'API_KEY_HERE';
   private baseUrl = 'http://api.weatherapi.com/v1/forecast.json';
   private http = inject(HttpClient);
   
